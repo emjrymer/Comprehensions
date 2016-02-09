@@ -1,3 +1,5 @@
+
+
 # vowel removal
 
 sentence = "List Comprehensions are the Greatest!".lower()
@@ -50,4 +52,20 @@ def d_and_wh(item):
         d_waveheight[day[n]] = wave_height[n]
         n += 1
     return d_waveheight
+
 print(d_and_wh(contents))
+
+# average homework grades
+# not sure how to make this better
+
+with open("grades.txt") as new_file:
+    student_dict = new_file.read()
+def avg_hw_one(student_dict):
+    scores = [
+        hw['Homework 1']
+        for hw in student_dict.values()
+        ]
+    hw_average = sum(scores) / len(scores)
+    return hw_average
+hw_1_average = avg_hw_one(student_dict)
+print(hw_1_average)
