@@ -58,8 +58,9 @@ print(d_and_wh(contents))
 # average homework grades
 # not sure how to make this better
 
-with open("grades.txt") as new_file:
+'''with open("grades.txt") as new_file:
     student_dict = new_file.read()
+
 def avg_hw_one(student_dict):
     scores = [
         hw['Homework 1']
@@ -68,4 +69,20 @@ def avg_hw_one(student_dict):
     hw_average = sum(scores) / len(scores)
     return hw_average
 hw_1_average = avg_hw_one(student_dict)
-print(hw_1_average)
+print(hw_1_average)'''
+
+d = {'Gale': {'Homework 1': 88, 'Homework 2': 76}, 'Jordan': {'Homework 1': 92, 'Homework 2': 87}, 'Peyton': {'Homework 1': 84, 'Homework 2': 77}, 'River': {'Homework 1': 85, 'Homework 2': 91}}
+
+hw_vals = []
+for something in d:
+    hw_vals.append(d[something]['Homework 1'])
+
+hw_vals = [d[something]['Homework 1'] for something in d]
+
+from statistics import mean
+
+print(mean(hw_vals))
+
+
+
+
